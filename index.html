@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,14 @@
     <link rel="icon" href="/img/frame.png" type="image/png">
 
     <!-- SEO básico -->
-    <meta name="description" content="Programa FI 2025 — Actividades de Ingeniería de Sistemas y Civil: concursos, talleres, ponencias y más.">
+    <meta name="description"
+        content="Programa FI 2025 — Actividades de Ingeniería de Sistemas y Civil: concursos, talleres, ponencias y más.">
     <meta name="theme-color" content="#E67900">
 
     <!-- Open Graph (Facebook, WhatsApp, etc.) -->
     <meta property="og:title" content="🗓️ Programa FI 2025 — Ingeniería">
-    <meta property="og:description" content="Explora la guía de la Semana FI: ⭐ concursos, 🤖 talleres de IA, 🏆 ponencias y más.">
+    <meta property="og:description"
+        content="Explora la guía de la Semana FI: ⭐ concursos, 🤖 talleres de IA, 🏆 ponencias y más.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/img/frame.png">
     <meta property="og:image:alt" content="Banner del Programa FI 2025">
@@ -24,7 +27,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="🗓️ Programa FI 2025 — Ingeniería">
-    <meta name="twitter:description" content="Guía de actividades de la Semana FI: ⭐ concursos, 🤖 talleres de IA, 🏆 ponencias y más.">
+    <meta name="twitter:description"
+        content="Guía de actividades de la Semana FI: ⭐ concursos, 🤖 talleres de IA, 🏆 ponencias y más.">
     <meta name="twitter:image" content="/img/frame.png">
 
     <!-- Preload de la imagen social -->
@@ -38,6 +42,7 @@
             background: linear-gradient(to bottom, #FDFBF8, #F3F4F6);
             color: #1F2937;
         }
+
         .presentation-card {
             scroll-margin-top: 8rem;
             background: white;
@@ -46,30 +51,37 @@
             transition: all 0.3s ease;
             border-left: 4px solid #E67900;
         }
+
         .presentation-card:active {
             transform: scale(0.98);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-        .category-sistemas { 
+
+        .category-sistemas {
             background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
             color: #059669;
             border: 2px solid #059669;
         }
-        .category-civil { 
+
+        .category-civil {
             background: linear-gradient(135deg, #FCE7D7 0%, #FED7AA 100%);
             color: #EA580C;
             border: 2px solid #EA580C;
         }
-        .category-concurso { 
+
+        .category-concurso {
             background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
             color: #DC2626;
             border: 2px solid #DC2626;
-        } 
-        .category-general, .category-conjunto { 
+        }
+
+        .category-general,
+        .category-conjunto {
             background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
             color: #1D4ED8;
             border: 2px solid #1D4ED8;
         }
+
         .day-header {
             background: linear-gradient(90deg, #E67900 0%, #F39C3C 100%);
             position: sticky;
@@ -77,66 +89,94 @@
             z-index: 10;
         }
 
-        .bg-header{
-         background: linear-gradient(90deg, #E67900 0%, #F39C3C 100%);
+        .bg-header {
+            background: linear-gradient(90deg, #E67900 0%, #F39C3C 100%);
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
+
         .emoji-float {
             animation: float 3s ease-in-out infinite;
         }
+
         /* Optimización para pantallas pequeñas */
         @media (max-width: 640px) {
             .presentation-card {
                 border-radius: 0.75rem;
                 border-left-width: 3px;
             }
+
             .day-header {
                 top: 4rem;
             }
         }
     </style>
 </head>
+
 <body class="antialiased">
 
     <!-- Cabecera Fija -->
     <header class="sticky top-0 z-20 bg-header from-[#0044A1] to-[#3b82f6] shadow-lg">
         <div class="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
-            <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-wide flex items-center gap-2">
-                <span class="text-2xl sm:text-3xl">🗓️</span>
-                PROGRAMA FI 2025
+            <h1
+                class="text-[18px] sm:text-2xl md:text-3xl font-extrabold text-white tracking-wide flex items-center gap-2">
+                <span class="text-[18px] sm:text-3xl">🗓️</span>
+                PROGRAMA DE LA SEMANA FI 2025
             </h1>
         </div>
     </header>
 
     <div class="container mx-auto px-3 sm:px-4 md:px-8 py-4 sm:py-6 md:py-12">
-        
+
         <!-- Hero Section -->
-        <div class="text-center py-8 sm:py-12 md:py-16 bg-white rounded-xl sm:rounded-2xl shadow-lg mb-6 sm:mb-8 md:mb-12 border-b-4 border-[#E67900]">
-            <div class="flex justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <span class="text-4xl sm:text-5xl md:text-6xl emoji-float">⭐</span>
-                <span class="text-4xl sm:text-5xl md:text-6xl emoji-float" style="animation-delay: 0.2s;">🤖</span>
-                <span class="text-4xl sm:text-5xl md:text-6xl emoji-float" style="animation-delay: 0.4s;">🏆</span>
+        <div
+            class="text-center pb-8 sm:py-12 md:py-16 lg:py-20 bg-white rounded-xl sm:rounded-2xl shadow-lg mb-6 sm:mb-8 md:mb-12 border-b-4 border-[#E67900] relative overflow-hidden">
+
+            <!-- Imagen para móvil - ancho completo arriba -->
+            <div class="sm:hidden mb-6 -mx-3 sm:-mx-4 md:-mx-8">
+                <img src="img/18aniversario.png" class="w-full" alt="18 Aniversario" />
             </div>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-2 sm:mb-3 px-2">
-                ¡Tu Guía de la Semana FI!
-            </h2>
-            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 px-2">
-                Actividades de Ingeniería Civil y Sistemas
-            </p>
+
+            <!-- Contenido central -->
+            <div class="relative z-10 px-4">
+                <div class="flex justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <span class="text-4xl sm:text-5xl md:text-6xl emoji-float">⭐</span>
+                    <span class="text-4xl sm:text-5xl md:text-6xl emoji-float" style="animation-delay: 0.2s;">🤖</span>
+                    <span class="text-4xl sm:text-5xl md:text-6xl emoji-float" style="animation-delay: 0.4s;">🏆</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-2 sm:mb-3">
+                    ¡Tu Guía de la Semana FI!
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600">
+                    Actividades de Ingeniería Civil y Sistemas
+                </p>
+            </div>
+
+            <!-- Imagen para desktop - esquina superior derecha en absolute -->
+            <img src="img/18aniversario.png"
+                class="hidden sm:block absolute top-0 right-0 w-56 md:w-64 lg:w-80 xl:w-96 rounded-bl-3xl opacity-95 pointer-events-none"
+                alt="18 Aniversario" />
         </div>
 
         <!-- Contenedor Principal -->
         <main id="presentation-container" class="space-y-4 sm:space-y-6 md:space-y-8">
             <!-- Las tarjetas se generarán aquí -->
         </main>
-        
+
         <!-- Footer -->
         <footer class="text-center mt-12 sm:mt-16 py-6 sm:py-8 border-t-2 border-gray-200">
-            <p class="text-gray-600 text-base sm:text-lg font-semibold">💻 Ingeniería de Sistemas | 👷‍♂️ Ingeniería Civil 🏆</p>
+            <p class="text-gray-600 text-base sm:text-lg font-semibold">💻 Ingeniería de Sistemas | 👷‍♂️ Ingeniería
+                Civil 🏆</p>
             <p class="text-gray-400 text-xs sm:text-sm mt-2">UCSS - Semana FI 2025</p>
         </footer>
     </div>
@@ -144,14 +184,14 @@
     <script>
         const eventsData = [
             { day: 'Miércoles 15/10', time: '05:30 - 06:30', title: 'Albazo (Trote Inaugural)', category: 'General', location: 'Plaza NC a UCSS', description: '¡Levántate y brilla! Trote de inicio con docentes y estudiantes para arrancar la semana.', emoji: '🏃‍♂️🌅' },
-            
+
             { day: 'Sábado 18/10', time: '08:00 - 15:45', title: 'Campeonato Deportivo FI', category: 'Concurso', location: 'La Alameda del Edén', description: 'Competiciones en Fulbito Masculino/Femenino, Vóley Mixto, Básquet y Ajedrez. ¡Demuestra el espíritu FI!', emoji: '🏆⚽' },
-            
+
             { day: 'Lunes 20/10', time: '09:00 - 13:00', title: 'Concursos Académicos', category: 'Concurso', location: 'Auditorio UCSS', description: 'Incluye: Búsqueda del Tesoro 🗺️ (Civil-Sistemas), Sabio Ingeniería y Debate "¿Qué piensa sobre la Ingeniería?".', emoji: '🧠🔑' },
             { day: 'Lunes 20/10', time: '18:30 - 21:30', title: 'Concurso Soluciones con IA', category: 'Sistemas', location: 'Laboratorio IA', description: 'Desafío para crear soluciones tecnológicas innovadoras utilizando Inteligencia Artificial.', emoji: '💡🤖' },
-            
-            { day: 'Martes 21/10', time: '09:00 - 13:00', title: 'Feria de Ciencias Ingeniería', category: 'General', location: 'Lab IA y Lab Civil', description: 'Muestra de proyectos e invitación a colegios de Ingeniería Civil y Sistemas. ¡Ingeniería en acción!', emoji: '🧪🔬' },
-            
+
+            { day: 'Martes 21/10', time: '09:00 - 13:00', title: 'Feria de Ciencias Ingeniería', category: 'General', location: 'Lab IA y Lab Civil', description: 'Exposición de proyectos de Ingeniería Civil y de Sistemas dirigida a estudiantes de quinto grado de secundaria. ¡Una experiencia donde la ingeniería cobra vida!', emoji: '🧪🔬' },
+
             { day: 'Miércoles 22/10', time: '09:00 - 12:00', title: 'Concurso de Programación', category: 'Sistemas', location: 'Biblioteca UCSS', description: 'Prueba tus habilidades lógicas y algorítmicas en esta competencia de codificación.', emoji: '👨‍💻🥇' },
             { day: 'Miércoles 22/10', time: '11:00 - 13:00', title: 'Taller 1: Pavimentos con Software', category: 'Civil', location: 'Sala de Dibujo UCSS', description: 'Taller especializado sobre el análisis y diseño de pavimentos utilizando software específico. Ponente: Dra. Juana Lavado.', emoji: '🏗️📐' },
             { day: 'Miércoles 22/10', time: '14:00 - 16:00', title: 'Taller 2: Manejo y uso de UAV - Dron aplicado a Topografía fotogramétrica', category: 'Civil', location: 'Sala de Dibujo UCSS', description: 'Taller especializado Manejo y uso de UAV. Ponente: Ing. Daniel Yajahuanca.', emoji: '🏗️📐' },
@@ -161,7 +201,7 @@
             { day: 'Miércoles 22/10', time: '18:30 - 19:15', title: 'Ponencia 4: SENCICO', category: 'Civil', location: 'Auditorio UCSS', description: 'Ponencia a cargo del Ingeniero Civil de SENCICO (tema por definir).', emoji: '🧱👷' },
             { day: 'Miércoles 22/10', time: '19:15 - 19:55', title: 'Ponencia 5: Tema sobre BIM', category: 'Civil', location: 'Auditorio UCSS', description: 'Charla sobre Building Information Modeling (BIM). Ponente: Ing. Alex Villanueva.', emoji: '💻🌐' },
             { day: 'Miércoles 22/10', time: '19:55 - 20:15', title: 'Premiación Concursos / Clausura Ponencias Civil', category: 'Civil', location: 'Auditorio UCSS', description: 'Entrega de premios a ganadores de concursos del día y cierre de ponencias de Ingeniería Civil.', emoji: '🥇🎉' },
-            
+
             { day: 'Jueves 23/10', time: '09:00 - 11:00', title: 'Taller: Detección de señas con ML', category: 'Sistemas', location: 'Laboratorio IA', description: 'Taller práctico sobre Machine Learning aplicado a la detección de lenguaje de señas.', emoji: '🤖🖐️' },
             { day: 'Jueves 23/10', time: '11:00 - 13:00', title: 'Taller: Reconocimiento Facial con Insightface', category: 'Sistemas', location: 'Laboratorio IA', description: 'Implementación práctica de reconocimiento facial avanzado con Insightface.', emoji: '💻👁️' },
             { day: 'Jueves 23/10', time: '16:30 - 17:15', title: 'Ponencia 1: Traductor de Lenguaje de Señas con ML', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Presentación sobre la construcción de un traductor de lenguaje de señas con Machine Learning.', emoji: '🗣️🤖' },
@@ -170,15 +210,15 @@
             { day: 'Jueves 23/10', time: '19:00 - 19:45', title: 'Ponencia 4: IA en la gestión de bases de datos', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Del dato a la decisión: Integración de Inteligencia Artificial en la gestión de bases de datos. Ponente: Mg. Mario Pinedo Golac.', emoji: '📊💾' },
             { day: 'Jueves 23/10', time: '19:45 - 20:30', title: 'Ponencia 5: IA en la Gestión Educativa del Talento Humano', category: 'Sistemas', location: 'Auditorio UCSS', description: 'El Rol Emergente De La Inteligencia Artificial en entidades públicas. Ponente: Mg. Juan Carlos Gonzalez Olivares.', emoji: '🧠💼' },
             { day: 'Jueves 23/10', time: '20:30 - 21:00', title: 'Premiación Concursos / Clausura Ponencias Sistemas', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Entrega de premios a los ganadores de los concursos y clausura de ponencias de Ingeniería de Sistemas.', emoji: '🥇🎉' },
-            
+
             { day: 'Viernes 24/10', time: '15:00 - 17:00', title: 'Gincanas', category: 'Concurso', location: 'Auditorio UCSS', description: 'Juegos lúdicos en equipo (Pasa el ula ula, Tres en raya, Botella giratoria, etc.) para la integración.', emoji: '🤸‍♀️🎉' },
             { day: 'Viernes 24/10', time: '19:00 - 22:00', title: 'Noche de Talentos', category: 'General', location: 'Auditorio UCSS', description: 'Momento para mostrar las habilidades artísticas de los estudiantes de Civil y Sistemas.', emoji: '🎤🎨' },
-            
+
             { day: 'Sábado 25/10', time: '18:00 - 20:00', title: 'Tarde / Noche de Cine', category: 'General', location: 'Auditorio UCSS', description: 'Video de reseña de eventos y actividades académicas seguido de una película. Cierre de la Semana FI.', emoji: '🍿🎬' }
         ];
 
         const presentationContainer = document.getElementById('presentation-container');
-        
+
         function getCategoryClass(category) {
             if (category.includes('Sistemas')) return 'category-sistemas';
             if (category.includes('Civil')) return 'category-civil';
@@ -192,7 +232,7 @@
 
             eventsData.forEach((item, index) => {
                 const dayId = item.day.replace(/[^a-zA-Z0-9]/g, '');
-                
+
                 // Crear encabezado de día
                 if (item.day !== currentDay) {
                     currentDay = item.day;
@@ -212,9 +252,9 @@
 
                 // Crear tarjeta de evento
                 const section = document.createElement('section');
-                section.id = `event-${dayId}-${index}`; 
+                section.id = `event-${dayId}-${index}`;
                 section.className = `presentation-card p-4 sm:p-6 md:p-8`;
-                
+
                 const categoryClass = getCategoryClass(item.category);
 
                 section.innerHTML = `
@@ -254,10 +294,11 @@
                 presentationContainer.appendChild(section);
             });
         }
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             createPresentationSections();
         });
     </script>
 </body>
+
 </html>
