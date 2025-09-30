@@ -6,57 +6,108 @@
     <title>Presentación Visual con Emojis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Warm Neutrals & Deep Blues/Accents -->
-    <!-- Application Structure Plan: Diseño de presentación secuencial agrupada por días. Se utiliza un encabezado principal (<h2>) para cada día de la semana para una clara segmentación. La navegación fija superior se mantiene para los saltos rápidos. Cada actividad (evento) se presenta en una tarjeta con emoji, manteniendo el orden cronológico estricto y eliminando actividades no relacionadas con Sistemas/Concursos (como se solicitó previamente). -->
-    <!-- Visualization & Content Choices: 1. Agrupación por Días -> Objetivo: Separación visual y contexto temporal -> Método: Generación de encabezados H2 para cada día (JS/HTML/Tailwind) -> Justificación: Responde directamente a la necesidad de ver la programación diaria de forma estructurada. 2. Tarjetas de Eventos -> Objetivo: Impacto visual y detalle -> Método: Tarjetas con emojis (HTML/Tailwind) -> Justificación: Los emojis facilitan la identificación rápida de la actividad. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FDFBF8;
+            background: linear-gradient(to bottom, #FDFBF8, #F3F4F6);
             color: #1F2937;
         }
         .presentation-card {
-            min-height: 45vh; 
-            scroll-margin-top: 8rem; /* Ajustado para el nuevo encabezado de día */
-            background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s, box-shadow 0.3s;
+            scroll-margin-top: 8rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #E67900;
         }
-        .presentation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        .presentation-card:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-        .category-sistemas { background-color: #D1FAE5; color: #059669; } 
-        .category-concurso { background-color: #FEE2E2; color: #DC2626; } 
-        .category-general { background-color: #E0F2F1; color: #0D9488; } 
+        .category-sistemas { 
+            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+            color: #059669;
+            border: 2px solid #059669;
+        } 
+        .category-concurso { 
+            background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+            color: #DC2626;
+            border: 2px solid #DC2626;
+        } 
+        .category-general { 
+            background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+            color: #1D4ED8;
+            border: 2px solid #1D4ED8;
+        }
+        .day-header {
+
+            background: linear-gradient(90deg, #E67900 0%, #F39C3C 100%);
+            position: sticky;
+            top: 5rem;
+            z-index: 10;
+        }
+
+        .bg-header{
+         background: linear-gradient(90deg, #E67900 0%, #F39C3C 100%);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .emoji-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        /* Optimización para pantallas pequeñas */
+        @media (max-width: 640px) {
+            .presentation-card {
+                border-radius: 0.75rem;
+                border-left-width: 3px;
+            }
+            .day-header {
+                top: 4rem;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Cabecera y Navegación Fija (Solo Título) -->
-    <header class="sticky top-0 z-20 bg-white/95 backdrop-blur-md shadow-lg">
-        <div class="container mx-auto p-4 md:px-8 flex items-center">
-            <h1 class="text-3xl font-extrabold text-[#0044A1] tracking-wider">🗓️ PROGRAMA FI 2025</h1>
-            <!-- La sección de navegación ha sido eliminada -->
+    <!-- Cabecera Fija -->
+    <header class="sticky top-0 z-20 bg-header from-[#0044A1] to-[#3b82f6] shadow-lg">
+        <div class="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-wide flex items-center gap-2">
+                <span class="text-2xl sm:text-3xl">🗓️</span>
+                PROGRAMA FI 2025
+            </h1>
         </div>
     </header>
 
-    <div class="container mx-auto p-4 md:p-12">
+    <div class="container mx-auto px-3 sm:px-4 md:px-8 py-4 sm:py-6 md:py-12">
         
-        <div class="text-center py-16 bg-white rounded-xl shadow-2xl mb-12 border-b-8 border-[#3b82f6]">
-            <span class="text-7xl block mb-4">⭐🤖🏆</span>
-            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-800">¡Tu Guía de la Semana FI!</h2>
-            <p class="text-xl md:text-2xl text-gray-600 mt-3">Actividades de Ingeniería de Sistemas</p>
+        <!-- Hero Section -->
+        <div class="text-center py-8 sm:py-12 md:py-16 bg-white rounded-xl sm:rounded-2xl shadow-lg mb-6 sm:mb-8 md:mb-12 border-b-4 border-[#E67900]">
+            <div class="flex justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <span class="text-4xl sm:text-5xl md:text-6xl emoji-float">⭐</span>
+                <span class="text-4xl sm:text-5xl md:text-6xl emoji-float" style="animation-delay: 0.2s;">🤖</span>
+                <span class="text-4xl sm:text-5xl md:text-6xl emoji-float" style="animation-delay: 0.4s;">🏆</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-2 sm:mb-3 px-2">
+                ¡Tu Guía de la Semana FI!
+            </h2>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 px-2">
+                Actividades de Ingeniería de Sistemas
+            </p>
         </div>
 
-        <main id="presentation-container" class="space-y-16">
-            <!-- Las tarjetas de presentación se generarán aquí -->
+        <!-- Contenedor Principal -->
+        <main id="presentation-container" class="space-y-4 sm:space-y-6 md:space-y-8">
+            <!-- Las tarjetas se generarán aquí -->
         </main>
         
-        <footer class="text-center mt-20 py-8 border-t-2 border-gray-100 text-gray-500">
-            <p>💻 Ingeniería de Sistemas & Concursos 🏆</p>
+        <!-- Footer -->
+        <footer class="text-center mt-12 sm:mt-16 py-6 sm:py-8 border-t-2 border-gray-200">
+            <p class="text-gray-600 text-base sm:text-lg font-semibold">💻 Ingeniería de Sistemas & Concursos 🏆</p>
+            <p class="text-gray-400 text-xs sm:text-sm mt-2">UCSS - Semana FI 2025</p>
         </footer>
     </div>
 
@@ -85,52 +136,67 @@
 
         function createPresentationSections() {
             presentationContainer.innerHTML = '';
-            
             let currentDay = null;
 
             eventsData.forEach((item, index) => {
                 const dayId = item.day.replace(/[^a-zA-Z0-9]/g, '');
                 
-                // 1. CREAR ENCABEZADO DE DÍA si es un día nuevo
+                // Crear encabezado de día
                 if (item.day !== currentDay) {
                     currentDay = item.day;
                     const daySectionId = `day-${dayId}`;
 
-                    // Añadir un ancla para el scroll
-                    const dayHeaderAnchor = document.createElement('h2');
-                    dayHeaderAnchor.id = daySectionId;
-                    dayHeaderAnchor.className = 'text-4xl md:text-5xl font-extrabold text-gray-800 mt-16 mb-8 pt-4 border-b-4 border-[#3b82f6] sticky md:top-20 z-10 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg';
-                    dayHeaderAnchor.innerHTML = `📅 ${item.day}`;
-                    presentationContainer.appendChild(dayHeaderAnchor);
+                    const dayHeader = document.createElement('div');
+                    dayHeader.id = daySectionId;
+                    dayHeader.className = 'day-header text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg mb-4 sm:mb-6';
+                    dayHeader.innerHTML = `
+                        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold flex items-center gap-2 sm:gap-3">
+                            <span>📅</span>
+                            ${item.day}
+                        </h2>
+                    `;
+                    presentationContainer.appendChild(dayHeader);
                 }
 
-                // 2. CREAR TARJETA DE EVENTO
+                // Crear tarjeta de evento
                 const section = document.createElement('section');
                 section.id = `event-${dayId}-${index}`; 
-                section.className = `presentation-card p-6 md:p-10 mb-10`;
+                section.className = `presentation-card p-4 sm:p-6 md:p-8`;
                 
                 const categoryClass = getCategoryClass(item.category);
 
                 section.innerHTML = `
-                    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="flex flex-col space-y-4">
                         
-                        <!-- Columna de Emojis y Hora -->
-                        <div class="md:w-1/4 flex-shrink-0 text-center">
-                            <span class="text-7xl block mb-3 animate-pulse">${item.emoji}</span>
-                            <p class="text-2xl font-black text-gray-800">${item.time}</p>
-                            <p class="text-md font-semibold text-gray-500 mt-1">${item.location}</p>
-                        </div>
-                        
-                        <!-- Columna de Contenido -->
-                        <div class="md:w-3/4 text-center md:text-left">
-                            <h4 class="text-3xl md:text-4xl font-extrabold text-[#0044A1] mb-3">${item.title}</h4>
-                            
-                            <div class="inline-block px-4 py-1 text-sm font-bold rounded-full ${categoryClass} shadow-md tracking-wider">
-                                ${item.category.toUpperCase()}
+                        <!-- Fila superior: Emoji, Título y Badge -->
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <span class="text-4xl sm:text-5xl md:text-6xl flex-shrink-0">${item.emoji}</span>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="text-lg sm:text-xl md:text-2xl font-bold text-[#0044A1] mb-2 leading-tight">
+                                    ${item.title}
+                                </h4>
+                                <span class="inline-block px-3 py-1 text-xs font-bold rounded-full ${categoryClass} shadow-sm">
+                                    ${item.category.toUpperCase()}
+                                </span>
                             </div>
-                            
-                            <p class="text-lg text-gray-700 mt-5 leading-relaxed">${item.description}</p>
                         </div>
+                        
+                        <!-- Fila de información: Hora y Ubicación -->
+                        <div class="flex flex-wrap gap-3 sm:gap-4 text-sm sm:text-base">
+                            <div class="flex items-center gap-1.5 text-gray-700 font-semibold">
+                                <span class="text-base sm:text-lg">⏰</span>
+                                <span>${item.time}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-gray-600">
+                                <span class="text-base sm:text-lg">📍</span>
+                                <span>${item.location}</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Descripción -->
+                        <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                            ${item.description}
+                        </p>
                     </div>
                 `;
                 presentationContainer.appendChild(section);
@@ -139,7 +205,6 @@
         
         document.addEventListener('DOMContentLoaded', () => {
             createPresentationSections();
-            // Eliminados window.addEventListener('scroll', updateActiveNav); y updateActiveNav(); ya que no hay navegación activa.
         });
     </script>
 </body>
