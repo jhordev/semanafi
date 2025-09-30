@@ -9,11 +9,11 @@
     <link rel="icon" href="/img/frame.png" type="image/png">
 
     <!-- SEO básico -->
-    <meta name="description" content="Programa FI 2025 — Actividades de Ingeniería de Sistemas: concursos, talleres, ponencias y más.">
+    <meta name="description" content="Programa FI 2025 — Actividades de Ingeniería de Sistemas y Civil: concursos, talleres, ponencias y más.">
     <meta name="theme-color" content="#E67900">
 
     <!-- Open Graph (Facebook, WhatsApp, etc.) -->
-    <meta property="og:title" content="🗓️ Programa FI 2025 — Ingeniería de Sistemas">
+    <meta property="og:title" content="🗓️ Programa FI 2025 — Ingeniería">
     <meta property="og:description" content="Explora la guía de la Semana FI: ⭐ concursos, 🤖 talleres de IA, 🏆 ponencias y más.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/img/frame.png">
@@ -23,7 +23,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="🗓️ Programa FI 2025 — Ingeniería de Sistemas">
+    <meta name="twitter:title" content="🗓️ Programa FI 2025 — Ingeniería">
     <meta name="twitter:description" content="Guía de actividades de la Semana FI: ⭐ concursos, 🤖 talleres de IA, 🏆 ponencias y más.">
     <meta name="twitter:image" content="/img/frame.png">
 
@@ -54,13 +54,18 @@
             background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
             color: #059669;
             border: 2px solid #059669;
-        } 
+        }
+        .category-civil { 
+            background: linear-gradient(135deg, #FCE7D7 0%, #FED7AA 100%);
+            color: #EA580C;
+            border: 2px solid #EA580C;
+        }
         .category-concurso { 
             background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
             color: #DC2626;
             border: 2px solid #DC2626;
         } 
-        .category-general { 
+        .category-general, .category-conjunto { 
             background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
             color: #1D4ED8;
             border: 2px solid #1D4ED8;
@@ -120,7 +125,7 @@
                 ¡Tu Guía de la Semana FI!
             </h2>
             <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 px-2">
-                Actividades de Ingeniería de Sistemas
+                Actividades de Ingeniería Civil y Sistemas
             </p>
         </div>
 
@@ -131,7 +136,7 @@
         
         <!-- Footer -->
         <footer class="text-center mt-12 sm:mt-16 py-6 sm:py-8 border-t-2 border-gray-200">
-            <p class="text-gray-600 text-base sm:text-lg font-semibold">💻 Ingeniería de Sistemas & Concursos 🏆</p>
+            <p class="text-gray-600 text-base sm:text-lg font-semibold">💻 Ingeniería de Sistemas | 👷‍♂️ Ingeniería Civil 🏆</p>
             <p class="text-gray-400 text-xs sm:text-sm mt-2">UCSS - Semana FI 2025</p>
         </footer>
     </div>
@@ -139,22 +144,44 @@
     <script>
         const eventsData = [
             { day: 'Miércoles 15/10', time: '05:30 - 06:30', title: 'Albazo (Trote Inaugural)', category: 'General', location: 'Plaza NC a UCSS', description: '¡Levántate y brilla! Trote de inicio con docentes y estudiantes para arrancar la semana.', emoji: '🏃‍♂️🌅' },
-            { day: 'Sábado 18/10', time: '08:00 - 15:45', title: 'Campeonato Deportivo FI', category: 'Concurso', location: 'La alameda del Edén', description: 'Competición en Fulbito, Vóley, Básquet y Ajedrez. ¡Demuestra el espíritu FI!', emoji: '🏆⚽' },
-            { day: 'Lunes 20/10', time: '09:00 - 13:00', title: 'Concursos Académicos', category: 'Concurso', location: 'Auditorio UCSS', description: 'Búsqueda del Tesoro 🗺️, Sabio Ingeniería y Debate "¿Qué piensa sobre la Ingeniería?".', emoji: '🧠🔑' },
+            
+            { day: 'Sábado 18/10', time: '08:00 - 15:45', title: 'Campeonato Deportivo FI', category: 'Concurso', location: 'La Alameda del Edén', description: 'Competiciones en Fulbito Masculino/Femenino, Vóley Mixto, Básquet y Ajedrez. ¡Demuestra el espíritu FI!', emoji: '🏆⚽' },
+            
+            { day: 'Lunes 20/10', time: '09:00 - 13:00', title: 'Concursos Académicos', category: 'Concurso', location: 'Auditorio UCSS', description: 'Incluye: Búsqueda del Tesoro 🗺️ (Civil-Sistemas), Sabio Ingeniería y Debate "¿Qué piensa sobre la Ingeniería?".', emoji: '🧠🔑' },
             { day: 'Lunes 20/10', time: '18:30 - 21:30', title: 'Concurso Soluciones con IA', category: 'Sistemas', location: 'Laboratorio IA', description: 'Desafío para crear soluciones tecnológicas innovadoras utilizando Inteligencia Artificial.', emoji: '💡🤖' },
-            { day: 'Martes 21/10', time: '09:00 - 13:00', title: 'Feria de Ciencias Ingeniería', category: 'General', location: 'Lab IA y Lab Civil', description: 'Muestra de proyectos e invitación a colegios. ¡Ingeniería en acción!', emoji: '🧪🔬' },
-            { day: 'Jueves 23/10', time: '09:00 - 13:00', title: 'Talleres Prácticos de Sistemas', category: 'Sistemas', location: 'Laboratorio IA', description: 'Mañana intensa: Detección de señas con ML (9am) y Reconocimiento Facial con Insightface (11am).', emoji: '💻👁️' },
-            { day: 'Jueves 23/10', time: '16:30 - 20:30', title: 'Ponencias Avanzadas de IA y Sistemas', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Desde Traductores de Señas hasta el Rol de la IA en la Gestión Educativa y Bases de Datos. (Incluye egresados).', emoji: '📊🧠' },
-            { day: 'Viernes 24/10', time: '09:00 - 12:00', title: 'Concurso de Programación', category: 'Sistemas', location: 'Biblioteca UCSS', description: 'Prueba tus habilidades lógicas y algorítmicas en esta competencia de codificación.', emoji: '👨‍💻🥇' },
-            { day: 'Viernes 24/10', time: '15:00 - 17:00', title: 'Ginkanas', category: 'Concurso', location: 'Por definir', description: 'Juegos lúdicos en equipo (Pasa el ula ula, Botella giratoria, etc.) para la integración.', emoji: '🤸‍♀️🎉' },
+            
+            { day: 'Martes 21/10', time: '09:00 - 13:00', title: 'Feria de Ciencias Ingeniería', category: 'General', location: 'Lab IA y Lab Civil', description: 'Muestra de proyectos e invitación a colegios de Ingeniería Civil y Sistemas. ¡Ingeniería en acción!', emoji: '🧪🔬' },
+            
+            { day: 'Miércoles 22/10', time: '09:00 - 12:00', title: 'Concurso de Programación', category: 'Sistemas', location: 'Biblioteca UCSS', description: 'Prueba tus habilidades lógicas y algorítmicas en esta competencia de codificación.', emoji: '👨‍💻🥇' },
+            { day: 'Miércoles 22/10', time: '11:00 - 13:00', title: 'Taller 1: Pavimentos con Software', category: 'Civil', location: 'Sala de Dibujo UCSS', description: 'Taller especializado sobre el análisis y diseño de pavimentos utilizando software específico. Ponente: Dra. Juana Lavado.', emoji: '🏗️📐' },
+            { day: 'Miércoles 22/10', time: '14:00 - 16:00', title: 'Taller 2: Manejo y uso de UAV - Dron aplicado a Topografía fotogramétrica', category: 'Civil', location: 'Sala de Dibujo UCSS', description: 'Taller especializado Manejo y uso de UAV. Ponente: Ing. Daniel Yajahuanca.', emoji: '🏗️📐' },
+            { day: 'Miércoles 22/10', time: '16:00 - 16:45', title: 'Ponencia 1: Cemento Selva', category: 'Civil', location: 'Auditorio UCSS', description: 'Presentación técnica por parte de la empresa Cemento Selva. (Ponente por confirmar).', emoji: '🏭📄' },
+            { day: 'Miércoles 22/10', time: '16:45 - 17:30', title: 'Ponencia 2: CIP', category: 'Civil', location: 'Auditorio UCSS', description: 'Charla brindada por un representante del Colegio de Ingenieros del Perú (CIP).', emoji: '🏛️🗣️' },
+            { day: 'Miércoles 22/10', time: '17:30 - 18:15', title: 'Ponencia 3: Tema por confirmar', category: 'Civil', location: 'Auditorio UCSS', description: 'Ponencia a cargo de Ing. Elimelex Fernández (Egresado UCSS).', emoji: '🎓🎤' },
+            { day: 'Miércoles 22/10', time: '18:30 - 19:15', title: 'Ponencia 4: SENCICO', category: 'Civil', location: 'Auditorio UCSS', description: 'Ponencia a cargo del Ingeniero Civil de SENCICO (tema por definir).', emoji: '🧱👷' },
+            { day: 'Miércoles 22/10', time: '19:15 - 19:55', title: 'Ponencia 5: Tema sobre BIM', category: 'Civil', location: 'Auditorio UCSS', description: 'Charla sobre Building Information Modeling (BIM). Ponente: Ing. Alex Villanueva.', emoji: '💻🌐' },
+            { day: 'Miércoles 22/10', time: '19:55 - 20:15', title: 'Premiación Concursos / Clausura Ponencias Civil', category: 'Civil', location: 'Auditorio UCSS', description: 'Entrega de premios a ganadores de concursos del día y cierre de ponencias de Ingeniería Civil.', emoji: '🥇🎉' },
+            
+            { day: 'Jueves 23/10', time: '09:00 - 11:00', title: 'Taller: Detección de señas con ML', category: 'Sistemas', location: 'Laboratorio IA', description: 'Taller práctico sobre Machine Learning aplicado a la detección de lenguaje de señas.', emoji: '🤖🖐️' },
+            { day: 'Jueves 23/10', time: '11:00 - 13:00', title: 'Taller: Reconocimiento Facial con Insightface', category: 'Sistemas', location: 'Laboratorio IA', description: 'Implementación práctica de reconocimiento facial avanzado con Insightface.', emoji: '💻👁️' },
+            { day: 'Jueves 23/10', time: '16:30 - 17:15', title: 'Ponencia 1: Traductor de Lenguaje de Señas con ML', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Presentación sobre la construcción de un traductor de lenguaje de señas con Machine Learning.', emoji: '🗣️🤖' },
+            { day: 'Jueves 23/10', time: '17:15 - 18:00', title: 'Ponencia 2: Sistema de Control de Asistencia Facial', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Ponencia sobre la implementación de un sistema de control de asistencia estudiantil mediante reconocimiento facial.', emoji: '⏰👤' },
+            { day: 'Jueves 23/10', time: '18:00 - 18:45', title: 'Ponencia 3: Transformando desafíos en oportunidades', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Lecciones de vida y carrera de un egresado UCSS: Bach. Ebner Smith Medina Carrasco.', emoji: '🎓💡' },
+            { day: 'Jueves 23/10', time: '19:00 - 19:45', title: 'Ponencia 4: IA en la gestión de bases de datos', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Del dato a la decisión: Integración de Inteligencia Artificial en la gestión de bases de datos. Ponente: Mg. Mario Pinedo Golac.', emoji: '📊💾' },
+            { day: 'Jueves 23/10', time: '19:45 - 20:30', title: 'Ponencia 5: IA en la Gestión Educativa del Talento Humano', category: 'Sistemas', location: 'Auditorio UCSS', description: 'El Rol Emergente De La Inteligencia Artificial en entidades públicas. Ponente: Mg. Juan Carlos Gonzalez Olivares.', emoji: '🧠💼' },
+            { day: 'Jueves 23/10', time: '20:30 - 21:00', title: 'Premiación Concursos / Clausura Ponencias Sistemas', category: 'Sistemas', location: 'Auditorio UCSS', description: 'Entrega de premios a los ganadores de los concursos y clausura de ponencias de Ingeniería de Sistemas.', emoji: '🥇🎉' },
+            
+            { day: 'Viernes 24/10', time: '15:00 - 17:00', title: 'Gincanas', category: 'Concurso', location: 'Auditorio UCSS', description: 'Juegos lúdicos en equipo (Pasa el ula ula, Tres en raya, Botella giratoria, etc.) para la integración.', emoji: '🤸‍♀️🎉' },
             { day: 'Viernes 24/10', time: '19:00 - 22:00', title: 'Noche de Talentos', category: 'General', location: 'Auditorio UCSS', description: 'Momento para mostrar las habilidades artísticas de los estudiantes de Civil y Sistemas.', emoji: '🎤🎨' },
-            { day: 'Sábado 25/10', time: '18:00 - 20:00', title: 'Tarde/Noche de Cine', category: 'General', location: 'Auditorio UCSS', description: 'Cierre con video de reseña de eventos y una película.', emoji: '🍿🎬' }
+            
+            { day: 'Sábado 25/10', time: '18:00 - 20:00', title: 'Tarde / Noche de Cine', category: 'General', location: 'Auditorio UCSS', description: 'Video de reseña de eventos y actividades académicas seguido de una película. Cierre de la Semana FI.', emoji: '🍿🎬' }
         ];
 
         const presentationContainer = document.getElementById('presentation-container');
         
         function getCategoryClass(category) {
             if (category.includes('Sistemas')) return 'category-sistemas';
+            if (category.includes('Civil')) return 'category-civil';
             if (category.includes('Concurso')) return 'category-concurso';
             return 'category-general';
         }
